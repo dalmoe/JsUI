@@ -1,4 +1,6 @@
 var count = 0;
+var clear = document.createElement('div');
+clear.setAttribute("class", "clear");
 
 function fib(n, node){
     var tree = buildFib(n);
@@ -42,7 +44,7 @@ function buildFib(n){
         subDiv.appendChild(p);
         subDiv.appendChild(leftTree.html);
         subDiv.appendChild(rightTree.html);
-        subDiv.appendChild(clearDiv);
+        subDiv.appendChild(clear);
         
     }
     count++;
@@ -96,18 +98,10 @@ function buildPell(n){
         var clearDiv = document.createElement('div');
         clearDiv.setAttribute("class", "clear");
         
-        if(count > 32){
-            button = document.createElement('div');
-            button.setAttribute("class", "button");
-            button.setAttribute('id', n);
-            button.textContent = "Click to show subtree";
-            subDiv.appendChild(button);
-        }
-        else{
-            subDiv.appendChild(p);
-            subDiv.appendChild(leftTree.html);
-            subDiv.appendChild(rightTree.html);
-        }
+        subDiv.appendChild(p);
+        subDiv.appendChild(leftTree.html);
+        subDiv.appendChild(rightTree.html);
+        document.createElement('div');
     }
     count++;
     return {'value': value, 'html': subDiv};
@@ -139,18 +133,18 @@ function buildTrib(n){
         subDiv.appendChild(p);
     }    
     else{
-        var leftTree = buildPell(n - 1);
+        var leftTree = buildTrib(n - 1);
         leftTree.html.setAttribute("class", "trib-left");
         
-        var midTree = buildTrib(n - 2);
+        var midTree = buildTrib(n - 3);
         midTree.html.setAttribute("class", "trib-mid");
         
-        var rightTree = buildPell(n - 3);
+        var rightTree = buildTrib(n - 2);
         rightTree.html.setAttribute("class", "trib-right");
         
         value = leftTree.value + midTree.value + rightTree.value;
         var p = document.createElement('p');
-        p.textContent = "Pell(" + n + ") = " + value;
+        p.textContent = "Trib(" + n + ") = " + value;
         
         var clearDiv = document.createElement('div');
         clearDiv.setAttribute("class", "clear");
@@ -164,5 +158,8 @@ function buildTrib(n){
     return {'value' : value, 'html' : subDiv};
 }
 
+fib(5, document.getElementById("fibDiv"));
 
+pell(5, document.getElementById("pellDiv"));
 
+trib(5, document.getElementById("tribDiv"));

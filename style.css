@@ -11,7 +11,7 @@ h1{
 .fib-left{
     float: left;
     display: inline-block;
-    width: 47%;
+    width: 47%; 
     margin: 4px;
     white-space: nowrap;
 }
@@ -21,7 +21,7 @@ h1{
     display: inline-block;
     width: 47%;
     margin: 4px;
-    white-space: nowrap;
+    white-space: nowrap; 
 }
 
 .fib{
@@ -30,12 +30,12 @@ h1{
     white-space: nowrap;
 }
 
-.pell-left{
+.pell-left{   
     float: left;
     display: inline-block;
     width: 47%;
     margin: 4px;
-    padding: 0px;
+    padding: 0px; 
     
 }
 
@@ -81,4 +81,9 @@ h1{
     text-align: center;
     display: block;
     white-space: nowrap;
+}
+
+.clear{
+    display: block;
+    float: none;
 }
