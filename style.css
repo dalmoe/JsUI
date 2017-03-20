@@ -1,0 +1,84 @@
+body{
+    font-size: 12px;
+}
+
+h1{
+    text-align: center;
+    display: block;
+    clear: both;
+}
+
+.fib-left{
+    float: left;
+    display: inline-block;
+    width: 47%;
+    margin: 4px;
+    white-space: nowrap;
+}
+
+.fib-right{
+    float: right;
+    display: inline-block;
+    width: 47%;
+    margin: 4px;
+    white-space: nowrap;
+}
+
+.fib{
+    text-align: center;
+    display: block;
+    white-space: nowrap;
+}
+
+.pell-left{
+    float: left;
+    display: inline-block;
+    width: 47%;
+    margin: 4px;
+    padding: 0px;
+    
+}
+
+.pell-right{
+    float: right;
+    display: inline-block;
+    width: 47%;
+    margin: 4px;
+    padding: 0px;
+}
+
+.pell{
+    text-align: center;
+    display: block;
+    white-space: nowrap;
+}
+
+.trib-left{
+    float: left;
+    display: inline-block;
+    width: 30%;
+    margin: 4px;
+    white-space: nowrap;
+}
+
+.trib-mid{
+    float: right;
+    display: inline-block;
+    width: 30%;
+    margin: 4px;
+    white-space: nowrap;
+}
+
+.trib-right{
+    float: right;
+    display: inline-block;
+    width: 30%;
+    margin: 4px;
+    white-space: nowrap;
+}
+
+.trib{
+    text-align: center;
+    display: block;
+    white-space: nowrap;
+}

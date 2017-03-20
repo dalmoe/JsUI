@@ -57,6 +57,7 @@ function pell(n, node){
 
 function buildPell(n){
     var value;
+    var button;
     var subDiv = document.createElement('div');
     subDiv.setAttribute("class", "pell");
     
@@ -69,10 +70,11 @@ function buildPell(n){
         }
         
         if(count > 32){
-            var button = document.createElement('div');
+            button = document.createElement('div');
             button.setAttribute("class", "button");
             button.setAttribute('id', n)
             button.textContent = "Click to show subtree";
+            subDiv.appendChild(button);
         }
         else{
             var p = document.createElement('p');
@@ -95,10 +97,11 @@ function buildPell(n){
         clearDiv.setAttribute("class", "clear");
         
         if(count > 32){
-            var button = document.createElement('div');
+            button = document.createElement('div');
             button.setAttribute("class", "button");
-            button.setAttribute('id', n)
+            button.setAttribute('id', n);
             button.textContent = "Click to show subtree";
+            subDiv.appendChild(button);
         }
         else{
             subDiv.appendChild(p);
@@ -161,120 +164,5 @@ function buildTrib(n){
     return {'value' : value, 'html' : subDiv};
 }
 
-document.title = "Recursive JavaScript";
-var body = document.querySelector('body');
-var title1 = document.createElement('h1');
-title1.textContent = "Fibonacci Sequence";
-body.appendChild(title1);
-var fibDiv = document.createElement('div');
-fibDiv.setAttribute("id", "fibDiv");
-body.appendChild(fibDiv);
-fib(11, fibDiv);
 
-var title2 = document.createElement('h1');
-title2.textContent = "Pell Sequence";
-body.appendChild(title2);
 
-var pellDiv = document.createElement('div');
-pellDiv.setAttribute("id", "pellDiv");
-body.appendChild(pellDiv);
-count = 0;
-pell(11, pellDiv);
-
-var title3 = document.createElement('h1');
-title3.textContent = "Tribonacci Sequence";
-body.appendChild(title3);
-
-var tribDiv = document.createElement('div');
-tribDiv.setAttribute("id", "tribDiv");
-body.appendChild(tribDiv);
-count = 0;
-trib(11, tribDiv);
-
-var style = document.createElement('style');
-style.textContent =
-"body{" +
-"    font-size: 12px;" +
-"}" +
-"" +
-"h1{" +
-"    text-align: center;" +
-"    display: block;" +
-"    clear: both;" +
-"}" +
-"" +
-".fib-left{" +
-"    float: left;" +
-"    display: inline-block;" +
-"    width: 47%;" +
-"    margin: 4px;" +
-"    white-space: nowrap;" +
-"}" +
-"" +
-".fib-right{" +
-"    float: right;" +
-"    display: inline-block;" +
-"    width: 47%;" +
-"    margin: 4px;" +
-"    white-space: nowrap;" +
-"}" +
-"" +
-".fib{" +
-"    text-align: center;" +
-"    display: block;" +
-"    white-space: nowrap;" +
-"}" +
-"" +
-".pell-left{" +
-"    float: left;" +
-"    display: inline-block;" +
-"    width: 47%;" +
-"    margin: 4px;" +
-"    padding: 0px;" +
-"    " +
-"}" +
-"" +
-".pell-right{" +
-"    float: right;" +
-"    display: inline-block;" +
-"    width: 47%;" +
-"    margin: 4px;" +
-"    padding: 0px;" +
-"}" +
-"" +
-".pell{" +
-"    text-align: center;" +
-"    display: block;" +
-"    white-space: nowrap;" +
-"}" +
-"" +
-".trib-left{" +
-"    float: left;" +
-"    display: inline-block;" +
-"    width: 30%;" +
-"    margin: 4px;" +
-"    white-space: nowrap;" +
-"}" +
-"" +
-".trib-mid{" +
-"    float: right;" +
-"    display: inline-block;" +
-"    width: 30%;" +
-"    margin: 4px;" +
-"    white-space: nowrap;" +
-"}" +
-"" +
-".trib-right{" +
-"    float: right;" +
-"    display: inline-block;" +
-"    width: 30%;" +
-"    margin: 4px;" +
-"    white-space: nowrap;" +
-"}" +
-"" +
-".trib{" +
-"    text-align: center;" +
-"    display: block;" +
-"    white-space: nowrap;" +
-"}";
-document.querySelector('body').appendChild(style);
