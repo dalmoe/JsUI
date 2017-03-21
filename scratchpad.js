@@ -3,6 +3,7 @@ var clear = document.createElement('div');
 clear.setAttribute("class", "clear");
 
 function fib(n, node){
+    node.innerHTML= "";
     var tree = buildFib(n);
     node.appendChild(tree.html);
     node.setAttribute("id", "fib")
@@ -12,17 +13,21 @@ function buildFib(n){
     var value;
     var subDiv = document.createElement('div');
     subDiv.setAttribute("class", "fib");
+    n = parseInt(n);
     if(n < 2){
         if (n === 0){
             value = 0;
+            var p = document.createElement('p');
+            p.textContent = "Fib(" + n + ") = " + 0;
+            subDiv.appendChild(p);
         }
         else if(n === 1){
             value = 1;
+            var p = document.createElement('p');
+            p.textContent = "Fib(" + n + ") = " + 0;
+            subDiv.appendChild(p);
         }
         
-        var p = document.createElement('p');
-        p.textContent = "Fib(" + n + ") = " + value;
-        subDiv.appendChild(p);
     }
     else{
         var leftTree = buildFib(n - 1);
@@ -47,11 +52,11 @@ function buildFib(n){
         subDiv.appendChild(clear);
         
     }
-    count++;
      return {'value' : value, 'html' : subDiv}; 
 }
 
 function pell(n, node){
+    node.innerHTML= "";
     var tree = buildPell(n);
     node.appendChild(tree.html);
     node.setAttribute("id", "pell");
@@ -59,9 +64,10 @@ function pell(n, node){
 
 function buildPell(n){
     var value;
-    var button;
+    var button
     var subDiv = document.createElement('div');
     subDiv.setAttribute("class", "pell");
+    n = parseInt(n);
     
     if(n < 2){
         if(n === 1){
@@ -108,6 +114,7 @@ function buildPell(n){
 }
 
 function trib(n, node){
+    node.innerHTML= "";
     var tree = buildTrib(n);
     node.appendChild(tree.html);
     node.setAttribute("id", "trib");
@@ -117,6 +124,7 @@ function buildTrib(n){
     var value;
     var subDiv = document.createElement('div');
     subDiv.setAttribute("class", "trib");
+    n = parseInt(n);
     if(n < 3){
         if(n === 2){
             value = 2;
@@ -169,17 +177,20 @@ function changeButton(button, slider){
         button.textContent = "Build Trib(" + slider.value + ")";
     }
 }
+
+var fibDiv = document.getElementById("fibDiv");
 var fibSlider = document.getElementById("fibSlider");
 var fibButton = document.getElementById("fibButton");
 fibButton.textContent = "Build Fib(" + fibSlider.value + ")";
 fibSlider.setAttribute("onchange", "changeButton(fibButton, fibSlider)");
-fib(5, document.getElementById("fibDiv"));
 
+var pellDiv = document.getElementById("pellDiv");
 var pellSlider = document.getElementById("pellSlider");
 var pellButton = document.getElementById("pellButton");
 pellButton.textContent = "Build Pell(" + pellSlider.value + ")";
 pellSlider.setAttribute("onchange", "changeButton(pellButton, pellSlider)");
 
+var tribDiv = document.getElementById("tribDiv");
 var tribSlider = document.getElementById("tribSlider");
 var tribButton = document.getElementById("tribButton");
 tribButton.textContent = "Build Trib(" + tribSlider.value + ")";
