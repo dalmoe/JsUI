@@ -89,11 +89,31 @@ h1{
 }
 
 #fibSlider{
+    margin-left: 40%;
     display: inline-block;
 }
 
-#fibSliderNum{
+#fibButton{
+    margin-left: 5%;
+}
+
+#pellSlider{
+    margin-left: 40%;
     display: inline-block;
-    margin-left: 30%;
-    float: right;
+}
+
+#pellButton{
+    margin-left: 5%;
+}
+
+#fibSlider{
+    margin-left: 40%;
+    display: inline-block;
+}
+
+#tribSlider{
+    margin-left: 40%;
+}
+#tribButton{
+    margin-left: 5%;
 }

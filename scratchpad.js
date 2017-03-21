@@ -159,7 +159,15 @@ function buildTrib(n){
 }
 
 function changeButton(button, slider){
-    button.textContent = "Build Fib(" + slider.value + ")";
+    if(button.getAttribute("id") == "fibButton"){
+        button.textContent = "Build Fib(" + slider.value + ")";
+    }
+    else if (button.getAttribute("id") == "pellButton"){
+        button.textContent = "Build Pell(" + slider.value + ")";
+    }
+    else{
+        button.textContent = "Build Trib(" + slider.value + ")";
+    }
 }
 var fibSlider = document.getElementById("fibSlider");
 var fibButton = document.getElementById("fibButton");
@@ -167,6 +175,15 @@ fibButton.textContent = "Build Fib(" + fibSlider.value + ")";
 fibSlider.setAttribute("onchange", "changeButton(fibButton, fibSlider)");
 fib(5, document.getElementById("fibDiv"));
 
-pell(5, document.getElementById("pellDiv"));
+var pellSlider = document.getElementById("pellSlider");
+var pellButton = document.getElementById("pellButton");
+pellButton.textContent = "Build Pell(" + pellSlider.value + ")";
+pellSlider.setAttribute("onchange", "changeButton(pellButton, pellSlider)");
 
-trib(5, document.getElementById("tribDiv"));
+var tribSlider = document.getElementById("tribSlider");
+var tribButton = document.getElementById("tribButton");
+tribButton.textContent = "Build Trib(" + tribSlider.value + ")";
+tribSlider.setAttribute("onchange", "changeButton(tribButton, tribSlider)");
+
+
+
