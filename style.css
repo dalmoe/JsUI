@@ -10,7 +10,7 @@ h1{
 
 .fib-left{
     float: left;
-    display: inline-block;
+    display: inline-block;  
     width: 47%; 
     margin: 4px;
     white-space: nowrap;
@@ -30,7 +30,7 @@ h1{
     white-space: nowrap;
 }
 
-.pell-left{   
+.pell-left{    
     float: left;
     display: inline-block;
     width: 47%;
@@ -86,4 +86,14 @@ h1{
 .clear{
     display: block;
     float: none;
+}
+
+#fibSlider{
+    display: inline-block;
+}
+
+#fibSliderNum{
+    display: inline-block;
+    margin-left: 30%;
+    float: right;
 }

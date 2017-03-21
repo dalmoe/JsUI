@@ -158,6 +158,13 @@ function buildTrib(n){
     return {'value' : value, 'html' : subDiv};
 }
 
+function changeButton(button, slider){
+    button.textContent = "Build Fib(" + slider.value + ")";
+}
+var fibSlider = document.getElementById("fibSlider");
+var fibButton = document.getElementById("fibButton");
+fibButton.textContent = "Build Fib(" + fibSlider.value + ")";
+fibSlider.setAttribute("onchange", "changeButton(fibButton, fibSlider)");
 fib(5, document.getElementById("fibDiv"));
 
 pell(5, document.getElementById("pellDiv"));
